@@ -7,12 +7,5 @@
     cy.get('input[type="reset"]').click()
     cy.get('input[name="uid"]').should('have.value', '')
     cy.get('input[name="password"]').should('have.value', '')
-    cy.get('[type="submit"]').click()
-    cy.on('window:alert', (text) => {
-      expect(text).to.contains('User or Password is not valid')
-      cy.get('#alert-button').click()
-      //error on the site with non-remove alert
-    })
-    cy.url().should('include', '/Agi_V1/index.php')
   })
  })
